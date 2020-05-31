@@ -3,7 +3,7 @@
 import socket
 
 HOST = '127.0.0.1'  # Standard loopback interface address (localhost)
-PORT = 9999        # Port to listen on (non-privileged ports are > 1023)
+PORT = 9986        # Port to listen on (non-privileged ports are > 1023)
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.bind((HOST, PORT))
@@ -13,6 +13,9 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         print('Connected by', addr)
         while True:
             data = conn.recv(1024)
-            if not data:
+            data_proc = data.decode(encoding='utf-8',errors='strict')
+            if not data_proc:
                 break
+            else:
+                print(data_proc)
             conn.sendall(data)
