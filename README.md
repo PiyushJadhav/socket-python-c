@@ -2,7 +2,7 @@ This repository is to setup a dummy communication between the Python and C proce
 
 In this Server-Client mode of the communication, both C and Python has its own server and client. These files can be used to send messages across server and client process. 
 
-To the this application, you need to open two terminals inside a particular subfolder:
+To use this application, you need to open two terminals inside a particular subfolder:
 1. Compile the C program using gcc, 
     `gcc $(pkg-config --cflags json-glib-1.0) server.c -o server $(pkg-config --libs json-glib-1.0)`
         OR
